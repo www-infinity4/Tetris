@@ -135,3 +135,114 @@ h1 {
 #restart-btn:hover {
   background: #c73652;
 }
+
+/* ─── Music button ─────────────────────────────────────────────────────────── */
+.music-btn {
+  background: #16213e;
+  border: 2px solid #0f3460;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #eee;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  margin-top: 4px;
+}
+.music-btn:hover { background: #0f3460; }
+
+/* ─── Mobile joystick controls ─────────────────────────────────────────────── */
+#mobile-controls {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px 28px;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+#joystick-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#joystick-base {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #16213e;
+  border: 3px solid #0f3460;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  box-shadow: 0 0 12px rgba(15, 52, 96, 0.6);
+}
+
+#joystick-knob {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ff6b80, #e94560);
+  box-shadow: 0 2px 10px rgba(233, 69, 96, 0.55);
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.04s linear;
+}
+
+#action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.action-btn {
+  background: #16213e;
+  border: 2px solid #0f3460;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  color: #eee;
+  font-size: 1.5rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s, transform 0.08s;
+  -webkit-tap-highlight-color: transparent;
+}
+.action-btn:active { background: #0f3460; transform: scale(0.92); }
+
+#btn-drop   { border-color: #e94560; color: #e94560; }
+#btn-pause  { width: 48px; height: 48px; font-size: 1.1rem; }
+
+/* ─── Responsive / touch-device layout ─────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  #mobile-controls { display: flex; }
+}
+
+@media (max-width: 580px) {
+  #mobile-controls { display: flex; }
+  body { align-items: flex-start; padding-top: 10px; }
+  #game-container { flex-direction: column; align-items: center; gap: 8px; }
+  #left-panel {
+    flex-direction: row;
+    min-width: unset;
+    width: 300px;
+    gap: 8px;
+  }
+  #left-panel h1 { display: none; }
+  .info-box { padding: 8px 6px; flex: 1; }
+  #right-panel { display: none; }
+}

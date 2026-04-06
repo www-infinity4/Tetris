@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Tetris</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -46,6 +46,21 @@
         <p>Space Hard Drop</p>
         <p>P Pause</p>
       </div>
+      <button id="music-btn" class="music-btn">♫ OFF</button>
+    </div>
+  </div>
+
+  <!-- Mobile / touch controls -->
+  <div id="mobile-controls">
+    <div id="joystick-zone">
+      <div id="joystick-base">
+        <div id="joystick-knob"></div>
+      </div>
+    </div>
+    <div id="action-buttons">
+      <button id="btn-rotate" class="action-btn">↻</button>
+      <button id="btn-drop"   class="action-btn">▼</button>
+      <button id="btn-pause"  class="action-btn">⏸</button>
     </div>
   </div>
   <script src="tetris.js"></script>
